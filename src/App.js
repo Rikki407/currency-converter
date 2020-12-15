@@ -62,7 +62,7 @@ function App() {
 
     return (
         <>
-            <h1>Currency Converter</h1>
+            <h1 className="glow">Currency Converter</h1>
             <div className="container">
                 <div style={{ marginRight: 20 }}>
                     <CurrencyRow

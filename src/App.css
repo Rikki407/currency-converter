@@ -1,7 +1,7 @@
 body {
     background-image: url(./Currency_Pattern.png);
     background-repeat: no-repeat;
-    background-size:cover;
+    background-size: cover;
 }
 .container {
     padding: 30px 8px;
@@ -16,11 +16,31 @@ body {
 }
 
 h1 {
-    margin: 0;
     margin-bottom: 0.5rem;
-    color: white;
 }
 
+.glow {
+    font-size: 40px;
+    color: #fff;
+    text-align: center;
+    -webkit-animation: glow 1s ease-in-out infinite alternate;
+    -moz-animation: glow 1s ease-in-out infinite alternate;
+    animation: glow 1s ease-in-out infinite alternate;
+}
+
+@keyframes glow {
+    from {
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.833), 0 0 20px rgba(255, 255, 255, 0.833), 0 0 30px #ff602c,
+            0 0 40px #ff602c, 0 0 50px #ff602c, 0 0 60px #ff602c,
+            0 0 70px #ff602c;
+    }
+
+    to {
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.833), 0 0 30px #ffb023, 0 0 40px #ffb023,
+            0 0 50px #ffb023, 0 0 60px #ffb023, 0 0 70px #ffb023,
+            0 0 80px #ffb023;
+    }
+}
 
 .equals {
     position: absolute;
@@ -34,8 +54,8 @@ h1 {
     color: white;
     background: linear-gradient(
         90deg,
-        rgba(255, 96, 44, 1) 0%,
-        rgba(255, 176, 35, 1) 100%
+        #ff602c 0%,
+        #ffb023 100%
     );
     box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
 }
