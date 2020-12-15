@@ -75,13 +75,13 @@ function App() {
                         onChangeAmount={handleFromAmountChange}
                     />
                 </div>
-                <button
+                <span
                     ref={buttonRef}
                     className="equals"
                     onClick={convertCurrency}
                 >
-                    ⬌
-                </button>
+                    <p>⬌</p>
+                </span>
                 <div>
                     <CurrencyRow
                         currencyOptions={currencyOptions}

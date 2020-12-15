@@ -51,6 +51,9 @@ h1 {
 .equals {
     position: absolute;
     left: calc(50% - (83px / 2));
+    display: flex;
+    justify-content: center;
+    align-items: center;
     font-size: 4rem;
     width: 83px;
     height: 83px;
