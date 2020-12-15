@@ -1,6 +1,7 @@
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import CurrencyRow from './components/CurrencyBlock';
+import darrow from './DSidedArrow.svg';
 
 const BASE_URL = 'https://api.frankfurter.app/latest';
 
@@ -75,13 +76,13 @@ function App() {
                         onChangeAmount={handleFromAmountChange}
                     />
                 </div>
-                <span
+                <div
                     ref={buttonRef}
                     className="equals"
                     onClick={convertCurrency}
                 >
-                    <p>⬌</p>
-                </span>
+                    <img src={darrow} className="darrow" alt="" />
+                </div>
                 <div>
                     <CurrencyRow
                         currencyOptions={currencyOptions}
