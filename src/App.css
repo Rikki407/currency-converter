@@ -9,10 +9,15 @@ body {
     box-sizing: border-box;
     border-radius: 20px;
     z-index: -1;
-    display: flex;
+    width: 498px;
+    display: inline-flex;
     flex-direction: row;
+    flex-wrap: wrap;
     background-color: black;
     align-items: center;
+    align-content: space-between;
+    justify-content: space-between;
+    margin: 0 auto;
 }
 
 h1 {
@@ -30,32 +35,39 @@ h1 {
 
 @keyframes glow {
     from {
-        text-shadow: 0 0 10px rgba(255, 255, 255, 0.833), 0 0 20px rgba(255, 255, 255, 0.833), 0 0 30px #ff602c,
+        text-shadow: 0 0 10px rgba(255, 255, 255, 0.833),
+            0 0 20px rgba(255, 255, 255, 0.833), 0 0 30px #ff602c,
             0 0 40px #ff602c, 0 0 50px #ff602c, 0 0 60px #ff602c,
             0 0 70px #ff602c;
     }
 
     to {
-        text-shadow: 0 0 20px rgba(255, 255, 255, 0.833), 0 0 30px #ffb023, 0 0 40px #ffb023,
-            0 0 50px #ffb023, 0 0 60px #ffb023, 0 0 70px #ffb023,
-            0 0 80px #ffb023;
+        text-shadow: 0 0 20px rgba(255, 255, 255, 0.833), 0 0 30px #ffb023,
+            0 0 40px #ffb023, 0 0 50px #ffb023, 0 0 60px #ffb023,
+            0 0 70px #ffb023, 0 0 80px #ffb023;
     }
 }
 
 .equals {
     position: absolute;
     left: calc(50% - (83px / 2));
-    font-weight: bold;
-    font-size: 2rem;
+    font-size: 4rem;
     width: 83px;
     height: 83px;
     border: none;
     border-radius: 100px;
     color: white;
-    background: linear-gradient(
-        90deg,
-        #ff602c 0%,
-        #ffb023 100%
-    );
+    background: linear-gradient(90deg, #ff602c 0%, #ffb023 100%);
     box-shadow: rgba(0, 0, 0, 0.4) 0px 5px 15px;
+}
+
+@media screen and (max-width: 497px) {
+    .container {
+        width: 250px;
+        height: 425px;
+        justify-content: center;
+    }
+    .equals {
+        transform: rotate(-90deg);
+    }
 }

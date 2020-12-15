@@ -63,8 +63,8 @@ function App() {
     return (
         <>
             <h1 className="glow">Currency Converter</h1>
-            <div className="container">
-                <div style={{ marginRight: 20 }}>
+            <span className="container">
+                <div>
                     <CurrencyRow
                         currencyOptions={currencyOptions}
                         selectedCurrency={fromCurrency}
@@ -80,9 +80,9 @@ function App() {
                     className="equals"
                     onClick={convertCurrency}
                 >
-                    =
+                    ⬌
                 </button>
-                <div style={{ marginLeft: 20 }}>
+                <div>
                     <CurrencyRow
                         currencyOptions={currencyOptions}
                         selectedCurrency={toCurrency}
@@ -92,7 +92,7 @@ function App() {
                         inverse
                     />
                 </div>
-            </div>
+            </span>
         </>
     );
 }
