@@ -1,7 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import './App.css';
 import CurrencyRow from './components/CurrencyBlock';
-import Background from './Currency_Pattern.png';
 
 const BASE_URL = 'https://api.frankfurter.app/latest';
 
@@ -10,7 +9,6 @@ function App() {
     const [fromCurrency, setFromCurrency] = useState();
     const [toCurrency, setToCurrency] = useState();
     const [exchangeRate, setExchangeRate] = useState(0);
-    const [amount, setAmount] = useState(1);
     const [amountInFromCurrency, setAmountInFromCurrency] = useState(true);
     const [fromAmount, setFromAmount] = useState(0);
     const [toAmount, setToAmount] = useState(0);
@@ -23,7 +21,6 @@ function App() {
         fetch(BASE_URL)
             .then((res) => res.json())
             .then((data) => {
-                const firstCurrency = Object.keys(data.rates)[0];
                 setCurrencyOptions([
                     'SELECT',
                     data.base,
@@ -41,12 +38,12 @@ function App() {
     };
 
     useEffect(() => {
-        if (fromCurrency == 'SELECT' || toCurrency == 'SELECT') {
+        if (fromCurrency === 'SELECT' || toCurrency === 'SELECT') {
             buttonRef.current.disabled = true;
-        } else if (fromCurrency == toCurrency) {
+        } else if (fromCurrency === toCurrency) {
             buttonRef.current.disabled = false;
             setExchangeRate(1);
-        } else if (fromCurrency != null && toCurrency != null) {
+        } else if (fromCurrency !== null && toCurrency !== null) {
             buttonRef.current.disabled = false;
             fetch(`${BASE_URL}?base=${fromCurrency}&symbols=${toCurrency}`)
                 .then((res) => res.json())
@@ -55,19 +52,17 @@ function App() {
     }, [fromCurrency, toCurrency]);
 
     const handleFromAmountChange = (e) => {
-        setAmount(e.target.value);
         setFromAmount(e.target.value);
         setAmountInFromCurrency(true);
     };
     const handleToAmountChange = (e) => {
-        setAmount(e.target.value);
         setToAmount(e.target.value);
         setAmountInFromCurrency(false);
     };
 
     return (
         <>
-            <h1 className="glow">Currency Converter</h1>
+            <h1>Currency Converter</h1>
             <div className="container">
                 <div style={{ marginRight: 20 }}>
                     <CurrencyRow
